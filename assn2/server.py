@@ -2,12 +2,12 @@ from socket import *
 import threading
 import sys
 
-def input_prompt(conn):
+def input_prompt(conn):  # thread function to get input from keyboard
   while True:
     #get input to send
     message = input()
     if message == "quit":
-      break #repeat until input "quit"
+      break               #repeat until input "quit"
     conn.send(message.encode())
     print("I > " + message)
   #disconnect socket
@@ -48,14 +48,14 @@ def server_main(host, port):
   #disconnect socket
   sock.close()
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # main function
   if len(sys.argv) != 3:
-    print("[USAGE] : server.py [HOST_IPADDR] [PORT]")
+    print("[USAGE] : server.py [HOST_IPADDR] [PORT]")  # check if ip and port are specifed
   else:
     try:
       #get host and port
       port = int(sys.argv[2])
-      server_main(sys.argv[1], port)
+      server_main(sys.argv[1], port)                   # call main network main function
     except ValueError:
       print("PORT should be Integer Value")
 
