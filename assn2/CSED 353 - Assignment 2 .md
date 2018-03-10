@@ -46,7 +46,7 @@ def input_prompt(conn):  # thread function to get input from keyboard
 
 def server_main(host, port):
   #create socket for server
-  sock = socket(AF\_INET, SOCK\_STREAM)
+  sock = socket(AF_INET, SOCK_STREAM)
   s_addr = (host, port)
   print("Server open with " + host + ":%d" % (port))
   
