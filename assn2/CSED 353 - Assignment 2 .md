@@ -69,7 +69,7 @@ def server_main(host, port):
       #receive message
       while True:
         #print received message
-        print("\\n<" + str(c_addr\[0\]) + "> : " + conn.recv(4096).decode())
+        print("\n<" + str(c_addr[0]) + "> : " + conn.recv(4096).decode())
         
     except:
       print("Error Occured Close socket")
